@@ -1,5 +1,5 @@
 # My Portfolio Website
-
+# My Student no is 35267405
 ## Overview
 
 This project hosts my personal portfolio website on a remote Linux server using the NGINX web server. The site displays my name, student number, introduction, skills relevant to IT engineering, and contact details.
@@ -8,7 +8,7 @@ This project hosts my personal portfolio website on a remote Linux server using 
 
 1. Connected to the server via SSH using:
 
-ssh root@170.64.175.9
+ssh root@170.64.229.18
 
 
 
