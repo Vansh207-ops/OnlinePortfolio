@@ -29,7 +29,7 @@ echo "📄 Deploying index.html to /var/www/html..."
 cp index.html /var/www/html/index.html
 
 # Step 6: Set correct ownership
-echo "🔐 Setting file ownership to www-data..."
+echo " Setting file ownership to www-data..."
 chown www-data:www-data /var/www/html/index.html
 
 # Step 7: Restart nginx to apply changes
@@ -42,10 +42,10 @@ if command -v ufw &> /dev/null; then
     ufw allow 'Nginx HTTP'
 fi
 
-echo "✅ Setup complete!"
-echo "🌐 Your website should now be live at: http://<your-ip-address>"
+echo "Setup complete!"
+echo " Your website should now be live at: http://<170.64.229.18>"
 echo ""
-echo "👉 NOTE: If running manually, first make this script executable using:"
+echo " NOTE: If running manually, first make this script executable using:"
 echo "   chmod +x setup.sh"
 echo "Then run it with:"
 echo "   ./setup.sh"
