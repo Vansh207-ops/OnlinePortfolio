@@ -1,0 +1,142 @@
+Cloud Project Documentation
+Student Name: Vansh Ahuja
+Student ID: 35267405
+Project Title: Personal Online Portfolio
+IP Address: http://170.64.229.18
+Domain Name: https://onlineportfolio.rf.gd
+link site-  https://vansh207-ops.github.io/OnlinePortfolio/
+
+
+
+________________________________________
+ 1. Project Overview
+This project is a cloud-hosted personal portfolio website that showcases my technical skills, education, and projects. It was developed using HTML and CSS and deployed on a cloud server using DigitalOcean. A custom domain was linked via InfinityFree, and SSL was applied to ensure secure browsing over HTTPS.
+________________________________________
+ 2. Cloud Setup Steps
+ Step 1: Create a Droplet on DigitalOcean
+•	Chose Ubuntu 22.04 LTS (1GB RAM, 25GB SSD)
+•	Selected closest data center region (e.g., Singapore)
+•	Added SSH key for passwordless access
+ Step 2: SSH into Server
+ssh root@170.64.229.18
+ Step 3: Install and Start NGINX
+sudo apt update
+sudo apt install nginx -y
+sudo systemctl start nginx
+Step 4: Upload Portfolio Files
+sudo  nano /var/www/html/index.html
+Now the portfolio is live at: http://170.64.229.18
+________________________________________
+
+3. Uploading my site to github
+1.	Create a GitHub account: https://github.com
+2.	Create a new repository (e.g., OnlinePortfolio)
+3.	Upload your files (index.html, readme.md, etc.)
+4.	Commit the changes
+5.	Copy my GitHub repo link (e.g. https://github.com/Vansh207-ops/OnlinePortfolio.git)
+
+________________________________________
+ 3. Domain and DNS Setup
+ Step 1: Domain Registration
+•	Free domain: onlineportfolio.rf.gd via InfinityFree.net
+ Step 2: DNS Configuration
+•	Added nameservers from InfinityFree
+•	Uploaded HTML files through their File Manager
+
+________________________________________
+ 3. SSL/TLS Configuration
+•	InfinityFree provides automatic SSL (ZeroSSL).
+•	Certificate Details:
+o	Issuer: ZeroSSL ECC Domain Secure Site CA
+o	Valid: May 8, 2025 – Aug 7, 2025
+o	SAN: *.rf.gd
+•	Verified via SSL Checker
+ HTTPS works without errors at: https://onlineportfolio.rf.gd
+________________________________________
+ 5. Deployment Script
+File: setup.sh
+
+
+
+
+# ICT171 Portfolio Setup Script
+# Author: Vansh Ahuja
+# Student Number: 35267405
+
+echo "=================================================="
+echo " Starting setup for Vansh Ahuja's Portfolio Website"
+echo "=================================================="
+
+# Step 1: Update package list
+ " Updating package list..."
+sudo apt update 
+
+# Step 2: Install nginx
+"Installing NGINX web server..."
+apt install nginx -y
+
+# Step 3: Enable nginx to start on boot
+ " Enabling NGINX service..."
+systemctl enable nginx
+
+# Step 4: Start nginx now
+ "Starting NGINX..."
+systemctl start nginx
+
+# Step 5: Deploy HTML file
+ " Deploying index.html to /var/www/html..."
+sudo nano /var/www/html/index.html
+
+
+# Step 7: Restart nginx to apply changes
+ "Restarting NGINX..."
+systemctl restart nginx
+
+
+
+
+echo "Setup complete!"
+echo " Your website should now be live at: http://<170.64.229.18>"
+echo ""
+echo "Website deployed successfully at http://170.64.229.18"
+________________________________________
+6. Script Documentation
+Line	Explanation
+apt update	Updates server package list
+apt install nginx	Installs web server
+systemctl enable	Ensures NGINX auto-starts
+	Removes default NGINX page
+sudo nano /var/www/html/index.html	   Uploads your portfolio
+
+	
+________________________________________
+ 7. Script Output
+Website deployed successfully at http://170.64.229.18
+The output appears in the terminal after running bash setup.sh
+________________________________________
+ 8. DNS & SSL Documentation
+Feature 	    Status	           Notes
+DNS	  Working	            Domain onlineportfolio.rf.gd resolves correctly
+SSL	    Valid	            HTTPS with ZeroSSL – valid till August 2025
+________________________________________
+9. GitHub Evidence
+•	Link: https://github.com/Vansh207-ops/OnlinePortfolio
+•	Contains:
+o	index.html
+o	license
+o	setup.sh
+o	README.md with:
+	Project summary
+	Student number: 35267405
+	Setup steps
+•	Multiple commits made over time to show improvement history.
+________________________________________
+10. Video Explainer (https://youtu.be/7RRR9wQjh_c?feature=shared)
+•	Shows:
+o	Droplet creation
+o	SSH login
+o	NGINX + site deployment
+o	DNS + HTTPS demo
+o	Portfolio walkthrough
+________________________________________
+
